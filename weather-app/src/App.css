@@ -38,7 +38,7 @@ body{
 
 .main-card {
   width: 34rem;
-  height: calc(90vh - 4rem); 
+  height: calc(82vh - 4rem); 
   background-color: rgb(225, 248, 239);
   border-radius: 4%;
   display: flex;
@@ -129,7 +129,7 @@ margin-top: -1rem;
 @media (max-width: 768px) {
  .main-card {
     width: 28rem;
-    height: calc(85vh - 4rem); 
+    height: calc(77vh - 4rem); 
   }
 
   .current-weather {
@@ -161,7 +161,7 @@ margin-top: -1rem;
 @media (max-width: 480px) {
    .main-card {
     width: 20rem;
-    height: calc(83vh - 4rem); 
+    height: calc(75vh - 4rem); 
   }
 
   .current-weather {
