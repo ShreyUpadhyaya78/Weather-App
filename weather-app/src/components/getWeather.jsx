@@ -1,19 +1,16 @@
 import { fetchWeatherApi } from 'openmeteo';
-// WeatherData.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import precipitationIcon from '../assets/icons8-precipitation-50.png'
 import windIcon from '../assets/icons8-wind-50.png'
 import humidityIcon from '../assets/icons8-humidity-50.png'
 
 const processResponses = (responses) => {
-  // Helper function to form time ranges
+  
   const range = (start, stop, step) =>
     Array.from({ length: (stop - start) / step }, (_, i) => start + i * step);
 
-  // Process first location. Add a for-loop for multiple locations or weather models
   const response = responses[0];
-
-  // Attributes for timezone and location
+  
   const utcOffsetSeconds = response.utcOffsetSeconds();
   const timezone = response.timezone();
   const timezoneAbbreviation = response.timezoneAbbreviation();
@@ -24,7 +21,6 @@ const processResponses = (responses) => {
   const hourly = response.hourly();
   const daily = response.daily();
 
-  // Note: The order of weather variables in the URL query and the indices below need to match!
   const weatherData = {
     current: {
       time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
@@ -240,7 +236,7 @@ const WeatherData = ({ lon, lat }) => {
         const url = 'https://api.open-meteo.com/v1/forecast';
         const responses = await fetchWeatherApi(url, params);
 
-        // Process the responses and set the weatherData state
+        
         setWeatherData(processResponses(responses));
       } catch (err) {
         setError(err.message);
@@ -271,13 +267,13 @@ const WeatherData = ({ lon, lat }) => {
   const getCurrentHourData = () => {
     if (!weatherData || !weatherData.hourly) return null;
 
-    const currentHour = new Date().getUTCHours(); // Get the current hour in UTC
+    const currentHour = new Date().getUTCHours(); 
     const utcOffsetSeconds =
-      weatherData.hourly.time[0].getTimezoneOffset() * 60; // Get the UTC offset in seconds
+      weatherData.hourly.time[0].getTimezoneOffset() * 60; 
 
     const currentHourData = weatherData.hourly.time.find((time, index) => {
-      const adjustedTime = new Date(time.getTime() + utcOffsetSeconds * 1000); // Adjust the time for the correct time zone
-      return adjustedTime.getUTCHours() === currentHour; // Compare with the current hour in UTC
+      const adjustedTime = new Date(time.getTime() + utcOffsetSeconds * 1000); 
+      return adjustedTime.getUTCHours() === currentHour; 
     });
 
     const currentHourIndex = weatherData.hourly.time.indexOf(currentHourData);
@@ -308,7 +304,7 @@ const WeatherData = ({ lon, lat }) => {
     return <div>No weather data available</div>;
   }
 
-  // Render the weather data using the weatherData object
+ 
   return (
     <div>
       <p>{getWeatherDescription(weatherData.current.weatherCode)}</p>

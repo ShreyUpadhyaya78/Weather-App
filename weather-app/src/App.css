@@ -36,9 +36,9 @@ body{
 }
 
 
-.main-card{
+.main-card {
   width: 34rem;
-  height: 28.5rem;
+  height: calc(90vh - 4rem); 
   background-color: rgb(225, 248, 239);
   border-radius: 4%;
   display: flex;
@@ -124,4 +124,68 @@ margin-top: -1rem;
   background-color: rgb(136, 202, 240);
   color: white;
   outline: none;
+}
+
+@media (max-width: 768px) {
+ .main-card {
+    width: 28rem;
+    height: calc(85vh - 4rem); 
+  }
+
+  .current-weather {
+    width: 24rem;
+  }
+
+  .current-temperature h1 {
+    font-size: 4rem;
+  }
+
+  .each-current {
+    width: 5rem;
+    height: 2.5rem;
+  }
+
+  .each-current p {
+    font-size: 16px;
+  }
+
+  .each-current span {
+    font-size: 8px;
+  }
+
+  .daily-weather img {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+   .main-card {
+    width: 20rem;
+    height: calc(83vh - 4rem); 
+  }
+
+  .current-weather {
+    width: 16rem;
+  }
+
+  .current-temperature h1 {
+    font-size: 3rem;
+  }
+
+  .each-current {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .each-current p {
+    font-size: 14px;
+  }
+
+  .each-current span {
+    font-size: 6px;
+  }
+
+  .daily-weather img {
+    width: 30px;
+  }
 }
