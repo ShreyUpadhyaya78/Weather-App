@@ -1,0 +1,127 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+body{
+  background-color: #a2fae4;
+}
+.input-form{
+  display: flex;
+  margin-top: 2rem;
+  height: 2rem;
+  width:20rem;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+.search-field{
+  height: 1.5rem;
+  border-style: none;
+  font-size: large;
+  width: 15rem;
+}
+.search-btn{
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  margin-top: .3rem;
+  margin-left:  1rem;
+}
+.search-field:focus{
+  outline: none;
+}
+
+
+.main-card{
+  width: 34rem;
+  height: 28.5rem;
+  background-color: rgb(225, 248, 239);
+  border-radius: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-weather{
+  display: flex;
+  justify-content: space-between;
+  width: 30rem;
+  margin-bottom: 2rem;
+}
+.current-temperature h1{
+  font-size: 5rem;
+  padding: 0rem;
+  margin: 0rem;
+}
+.current-temperature p{
+margin-top: -1rem;
+}
+.current-stats{
+  display: flex;
+  flex-direction: column; 
+  height: 5rem;
+
+}
+.current-stats img{
+  width: 25px;
+}
+.each-current{
+  width: 6rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+.each-current p{
+  font-size: 20px;
+}
+.each-current span{
+  font-size: 10px;
+}
+.daily-weather{
+  width: 100%;
+
+  display: flex;
+  justify-content:space-between;
+  line-height: 0.6;
+  margin-top: -1rem;
+  margin-bottom: .4rem;
+}
+.daily-weather img{
+  width: 60px;
+}
+.cel-btn,.fah-btn{
+  background-color: rgb(225, 248, 239);
+  border: none;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: color 10ms;
+}
+.cel-btn:hover,.fah-btn:hover{
+  background-color: rgb(136, 202, 240);
+  color: white;
+}
+.cel-btn{
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+  border-right:1px solid #aaa;
+}
+.fah-btn{
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+.cel-btn:focus,.fah-btn:focus{
+  background-color: rgb(136, 202, 240);
+  color: white;
+  outline: none;
+}
+.cel-btn.active, .fah-btn.active {
+  background-color: rgb(136, 202, 240);
+  color: white;
+  outline: none;
+}
